@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView : View {
     
     @State var show = false
+    @State var viewState = CGSize.zero
     
     var body: some View {
         ZStack {
@@ -24,32 +25,38 @@ struct ContentView : View {
                 .animation(.default)
             
             CardView()
-                .background(Color.blue)
-                .cornerRadius(10)
-                .shadow(radius: 20)
                 .offset(x: 0, y: show ? -400 : -40)
                 .scaleEffect(0.85)
                 .rotationEffect(Angle(degrees: show ? 15 : 0))
                 .blendMode(.hardLight)
                 .animation(.basic(duration: 0.25, curve: .easeOut))
+                .offset(x: viewState.width, y: viewState.height)
             
             CardView()
-                .background(Color.blue)
-                .cornerRadius(10)
-                .shadow(radius: 20)
                 .offset(x: 0, y: show ? -200 : -20)
                 .scaleEffect(0.9)
                 .rotationEffect(Angle(degrees: show ? 10 : 0))
                 .blendMode(.hardLight)
                 .animation(.basic(duration: 0.25, curve: .easeOut))
+                .offset(x: viewState.width, y: viewState.height)
             
             CertificateView()
+                .offset(x: viewState.width, y: viewState.height)
                 .scaleEffect(0.95)
                 .rotationEffect(Angle(degrees: show ? 5 : 0))
                 .animation(.spring())
                 .tapAction {
                     self.show.toggle()
-            }
+                }
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            self.viewState = value.translation
+                    }
+                        .onEnded { value in
+                            self.viewState = CGSize.zero
+                    }
+            )
         }
     }
 }
@@ -71,6 +78,9 @@ struct CardView : View {
             Text("Card Back")
             }
             .frame(width: 340.0, height: 220.0)
+            .background(Color.blue)
+            .cornerRadius(10)
+            .shadow(radius: 20)
         
     }
 }
@@ -126,7 +136,7 @@ struct CardBottomView : View {
                 .frame(width: 60, height: 6)
                 .cornerRadius(3)
                 .opacity(0.1)
-            Text("This certificate is proof that Meng To has achieved the UI Design course with approval from a Design+Code instructor.")
+            Text("This certificate is proof that Chris Davis has achieved the UI Design course with approval from a Design+Code instructor.")
                 .lineLimit(10)
             Spacer()
             }
