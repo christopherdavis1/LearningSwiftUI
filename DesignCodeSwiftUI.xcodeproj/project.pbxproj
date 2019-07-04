@@ -13,6 +13,7 @@
 		839544AE22CC4C1A003D1480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839544AD22CC4C1A003D1480 /* Assets.xcassets */; };
 		839544B122CC4C1A003D1480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 839544B022CC4C1A003D1480 /* Preview Assets.xcassets */; };
 		839544B422CC4C1A003D1480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839544B222CC4C1A003D1480 /* LaunchScreen.storyboard */; };
+		83972A8222CE987F00B3CF81 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83972A8122CE987F00B3CF81 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		839544B022CC4C1A003D1480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		839544B322CC4C1A003D1480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		839544B522CC4C1A003D1480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83972A8122CE987F00B3CF81 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				839544A722CC4C18003D1480 /* AppDelegate.swift */,
 				839544A922CC4C18003D1480 /* SceneDelegate.swift */,
 				839544AB22CC4C18003D1480 /* ContentView.swift */,
+				83972A8122CE987F00B3CF81 /* Home.swift */,
 				839544AD22CC4C1A003D1480 /* Assets.xcassets */,
 				839544B222CC4C1A003D1480 /* LaunchScreen.storyboard */,
 				839544B522CC4C1A003D1480 /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				839544A822CC4C18003D1480 /* AppDelegate.swift in Sources */,
 				839544AA22CC4C18003D1480 /* SceneDelegate.swift in Sources */,
+				83972A8222CE987F00B3CF81 /* Home.swift in Sources */,
 				839544AC22CC4C18003D1480 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
