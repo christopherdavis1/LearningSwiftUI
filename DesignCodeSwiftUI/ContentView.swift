@@ -29,7 +29,7 @@ struct ContentView : View {
                 .scaleEffect(0.85)
                 .rotationEffect(Angle(degrees: show ? 15 : 0))
                 .blendMode(.hardLight)
-                .animation(.basic(duration: 0.25, curve: .easeOut))
+                .animation(.basic(duration: 0.7, curve: .easeInOut))
                 .offset(x: viewState.width, y: viewState.height)
             
             CardView()
@@ -37,7 +37,7 @@ struct ContentView : View {
                 .scaleEffect(0.9)
                 .rotationEffect(Angle(degrees: show ? 10 : 0))
                 .blendMode(.hardLight)
-                .animation(.basic(duration: 0.25, curve: .easeOut))
+                .animation(.basic(duration: 0.5, curve: .easeInOut))
                 .offset(x: viewState.width, y: viewState.height)
             
             CertificateView()
@@ -52,9 +52,11 @@ struct ContentView : View {
                     DragGesture()
                         .onChanged { value in
                             self.viewState = value.translation
+                            self.show = true
                     }
                         .onEnded { value in
                             self.viewState = CGSize.zero
+                            self.show = false
                     }
             )
         }
